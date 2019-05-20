@@ -1,17 +1,26 @@
 <%- include('../partials/header') %>
 
-<section id="show-page">
-    <div>Airline: </div>
-    <div><%= flight.airline %></div>
-    <div>Flight Number: </div>
-    <div><%= flight.flightNum %></div>
-    <div>Departs: </div>
-    <div><%= flight.departs %></div>
-    <div>Airport: </div>
-    <div><%= flight.airport %></div>
-</section>
+<table id="show-table">
+  <thead>
+    <tr>
+      <th>Airline</th>
+      <th>Flight No.</th>
+      <th>Departs</th>
+      <th>Airport</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= flight.airline %></td>
+      <td><%= flight.flightNum %></td>
+      <td><%= flight.departs %></td>
+      <td><%= flight.airport %></td>
+    </tr>
+  </tbody>
+</table>
 
-<h2>Destinations</h2>
+<h3>Destinations</h3>
 <form method="POST" action="/flights/<%= flight._id %>/destinations">
   <label>Airport:
       <select name="airport">
@@ -21,11 +30,12 @@
         <option value="SEA">SEA</option>
       </select>
     </label><br>
-    <input type="datetime-local" name="arrival">
-    <input type="submit" value="Add Destination">
+  <input type="datetime-local" name="arrival"><br>
+  <input type="submit" value="Add Destination">
 </form>
 
 <% if (flight.destinations.length) { %>
+  <h3>Selected Destinations</h3>
   <table>
     <thead>
       <tr>
@@ -47,14 +57,15 @@
 <% } %>
 
 <% if (flight.tickets.length) { %>
+  <h3>Tickets</h3>
   <table id="tickets">
       <thead>
           <tr>
               <th>Tickets for Flight <%= flight.flightNum %></th>
           </tr>
-          <tr>
-              <th class="hd">Seat No.</th>
-              <th class="hd">Price</th>
+          <tr  id="table-row">
+              <td class="hd">Seat No.</th>
+              <td class="hd">Price</th>
           </tr>
       </thead>
       <tbody>
@@ -70,6 +81,6 @@
       <h5>No Tickets Added Yet</h5>
   <% } %>
 
-<a href="/flights/<%= flight._id %>/tickets/new">New Ticket</a>
+<a id="new-ticket-link" href="/flights/<%= flight._id %>/tickets/new">New Ticket</a>
 
 <%- include('../partials/footer') %>

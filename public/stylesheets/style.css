@@ -1,8 +1,109 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #0b2d63;
+  color: #e5efff;
+  height: 100vmin;
+}
+
+nav {
+  background-color: #0a1a34;
+  margin: 0;
+}
+
+#nav-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav a {
+  text-decoration: none;
+  margin: 15px;
+  font-size: 20px;
 }
 
 a {
   color: #00B7FF;
+}
+
+#flight-table {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+table {
+  border-spacing: 0.5rem;
+}
+
+th {
+  background-color: rgb(30, 27, 60);
+  font-size: 25px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 10px;
+}
+
+tr {
+  border-bottom: 2px solid #e5efff;
+  font-size: 20px;
+}
+
+td {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 10px;
+}
+
+h2 {
+  font-size: 30px;
+  color: #e5efff;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+label {
+  font-size: 25px;
+  color: #e5efff;
+}
+
+input, select {
+  font-size: 15px;
+  padding: 5px;
+}
+
+#add-flight {
+  font-size: 20px;
+  padding: 5px;
+  margin-top: 10px;
+}
+
+#show-table {
+  margin-top: 15px;
+}
+
+h3 {
+  border-bottom: 2px solid #0a1a34;
+  font-size: 20px;
+  padding-top:20px;
+  margin-bottom: 10px;
+}
+
+table {
+  margin-bottom: 30px;
+}
+
+#table-row {
+  background-color: #0a1a34;
+}
+
+#new-ticket-link {
+  font-size: 30px;
+  margin: 10px;
+  padding: 30px;
 }
