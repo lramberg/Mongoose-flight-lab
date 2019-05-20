@@ -11,7 +11,7 @@ function create(req, res) {
     ticket.save(function(err) {
         err ? 
             res.render('tickets/new') :
-            Flight.findById(req.params.id, function (err, flight) {
+            Flight.findById(req.params.id, function (e, flight) {
                 flight.tickets.push(ticket);
                 flight.save(function (err) {
                     err ? 
